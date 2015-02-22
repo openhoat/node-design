@@ -54,7 +54,7 @@ function run() {
 Result :
 
 ```
-$ node http-1-bad-ok
+$ node samples/http-1-bad-ok
 server listening on port 3000
 response status : 200
 response body : Hello World
@@ -171,8 +171,10 @@ function run() {
 
 ### That's all!
 
-But may be you're asking why 'var' declarations are always on top line... ? [See why](var-location.md)
+Other stories :
 
-Or go back to [table of contents](README.md)
+- asking yourself why 'var' declarations are always on top line... ? [See why](var-location.md)
+- how to definitely deal with [callback hell](callback-hell.md)
+- go back to [table of contents](README.md)
 
 Enjoy !
