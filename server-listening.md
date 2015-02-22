@@ -1,6 +1,6 @@
 ## Server listening
 
-Usual mistake :
+Mistake that I see too often in many source codes :
 
 ```javascript
 server.listen(port);
