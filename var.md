@@ -1,6 +1,6 @@
 ## Var keyword good place
 
-Sure you have already seen this kind of code, and probably find it good : (var-1-bad-ok)[https://github.com/openhoat/node-design/blob/master/samples/var-1-bad-ok.js]
+Sure you have already seen this kind of code, and probably find it good : [var-1-bad-ok](https://github.com/openhoat/node-design/blob/master/samples/var-1-bad-ok.js)
 
 ```javascript
 var i = 1;
@@ -22,7 +22,7 @@ j : 3
 
 This form of source code let people guess that variables scopes begin at the place of the keyword 'var'.
 
-Let's see what is the truth : var-2-bad-ok)[https://github.com/openhoat/node-design/blob/master/samples/var-2-bad-ok.js]
+Let's see what is the truth : [var-2-bad-ok](https://github.com/openhoat/node-design/blob/master/samples/var-2-bad-ok.js)
 
 ```javascript
 console.log('i :', i);
