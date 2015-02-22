@@ -2,7 +2,7 @@
 
 Collection of thoughts and notes about nodejs usual mistakes and misunderstood points, for educational purpose.
 
-![Oh no!](https://github.com/github/openhoat/blob/master/assets/oh-no.jpg)
+![Oh no!](https://github.com/openhoat/blob/master/assets/oh-no.jpg)
 
 ## Prerequisite
 
