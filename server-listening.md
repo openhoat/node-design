@@ -7,6 +7,8 @@ server.listen(port);
 console.log('server listening on port %s', port);
 ```
 
+![Oh no!](https://raw.github.com/openhoat/node-design/branch/master/assets/oh-no.jpg)
+
 Most of the time this code falls running... but you should think it will always fail !
 
 Let's take an example :
