@@ -7,7 +7,7 @@ server.listen(port);
 console.log('server listening on port %s', port);
 ```
 
-![Oh no!](https://raw.github.com/openhoat/node-design/branch/master/assets/oh-no.jpg)
+![Oh no!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/oh-no.jpg)
 
 Most of the time this code falls running... but you should think it will always fail !
 
@@ -133,7 +133,7 @@ Error: connect ECONNREFUSED
 
 That's why the proper way to manage it and to prevent you of having bad surprises, is to always handle a callback when the API provides one, as shown in [server-listening-3-good-ok](https://github.com/openhoat/node-design/blob/master/samples/server-listening-3-good-ok.js) :
 
-![Oh yeah!](https://raw.github.com/openhoat/node-design/branch/master/assets/yes-baby.jpg)
+![Oh yeah!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/yes-baby.jpg)
 
 ```javascript
 function run() {
