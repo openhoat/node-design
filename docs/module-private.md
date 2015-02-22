@@ -75,6 +75,6 @@ More informaton about [format used by console.log](http://nodejs.org/api/util.ht
 Suggested stories :
 
 - asking yourself why ['var' declarations are always on top line](var.md)
-- go back to [table of contents](README.md#use-cases)
+- go back to [table of contents](../README.md#use-cases)
 
 Enjoy !

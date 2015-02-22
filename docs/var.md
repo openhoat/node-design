@@ -12,7 +12,7 @@ for (var j = 1; j <= 3; j++) {
 
 Result :
 
-```
+```bash
 $ node samples/var-1-bad-ok
 i : 1
 j : 1
@@ -38,7 +38,7 @@ for (var j = 1; j <= 3; j++) {
 
 Result :
 
-```
+```bash
 $ node samples/var-2-bad-ok
 i : undefined
 i : 1
@@ -76,7 +76,7 @@ console.log('typeof i : %s, typeof j : %s', typeof i, typeof j);
 
 Result :
 
-```
+```bash
 $ node samples/var-3-bad-ok
 typeof i : undefined, typeof j : undefined
 i : undefined
@@ -114,7 +114,7 @@ Example of nested scopes : [var-4-bad-ok](https://github.com/openhoat/node-desig
 
 Result :
 
-```
+```bash
 $ node samples/var-4-bad-ok
 i : undefined
 i : 1
@@ -168,7 +168,7 @@ console.log('a : %s, b : %s, c : %s', a, b, c);
 
 Result :
 
-```
+```bash
 $ node samples/var-5-bad-ok
 a : 7, b : 8, c : undefined
 i : undefined
@@ -195,6 +195,6 @@ Suggested stories :
 
 - asking yourself why ['var' declarations are always on top line](var-location.md)
 - how to definitely deal with [callback hell](callback-hell.md)
-- go back to [table of contents](README.md#use-cases)
+- go back to [table of contents](../README.md#use-cases)
 
 Enjoy !

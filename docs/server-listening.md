@@ -1,4 +1,5 @@
-## Server listening
+Server listening
+================
 
 Mistake that I see too often in many source codes :
 
@@ -55,7 +56,7 @@ function run() {
 
 Result :
 
-```
+```bash
 $ node samples/http-1-bad-ok
 server listening on port 3000
 response status : 200
@@ -63,7 +64,8 @@ response body : Hello World
 server closed
 ```
 
-### Why it should fail and why it does not ?
+Why it should fail and why it does not?
+---------------------------------------
 
 To understand why it could fail, first think that the http listen function is asynchronous (this is also available for others modules, like [express](http://expressjs.com/)).
 
@@ -83,7 +85,7 @@ The [hack helper](https://github.com/openhoat/node-design/blob/master/lib/hack.j
 
 Now when you execute the same code, it fails :
 
-```
+```bash
 $ node samples/server-listening-2-bad-ko
 server listening on port 3000
 
@@ -99,7 +101,7 @@ When server.listen() is called, it returns before having bound the network, so t
 
 Another way to understand it is to go back to server-listening-1-bad-ok and run it with internal logs :
 
-```
+```bash
 $ NODE_DEBUG="http net" node samples/server-listening-1-bad-ok
 NET: 9614 listen2 0.0.0.0 3000 4 false
 NET: 9614 _listen2: create a handle
@@ -114,7 +116,7 @@ NET: 9614 _read
 
 As you see, we are lucky because the binding is done before our log 'server listening...', but in the second case the binding hasn't finished when the request is received because we have slow down the listening job :
 
-```
+```bash
 $ NODE_DEBUG="http net" node samples/server-listening-2-bad-ko
 server listening on port 3000
 NET: 9750 connect: find host localhost
@@ -131,7 +133,8 @@ Error: connect ECONNREFUSED
 ...
 ```
 
-### The good way
+The good way
+------------
 
 That's why the proper way to manage it and to prevent you of having bad surprises, is to always handle a callback when the API provides one, as shown in [server-listening-3-good-ok](https://github.com/openhoat/node-design/blob/master/samples/server-listening-3-good-ok.js) :
 
@@ -170,17 +173,19 @@ function run() {
 }
 ```
 
-### To remember
+To remember
+-----------
 
 - 'listen' function is asynchronous like most of IO operations, so provide a callback function and put your next operations into it
 - this is also available for 'close'
 
-### That's all!
+That's all!
+-----------
 
 Suggested stories :
 
 - asking yourself why ['var' declarations are always on top line](var.md)
 - how to definitely deal with [callback hell](callback-hell.md)
-- go back to [table of contents](README.md#use-cases)
+- go back to [table of contents](../README.md#use-cases)
 
 Enjoy !
