@@ -4,7 +4,7 @@ Collection of thoughts and notes about nodejs usual mistakes and misunderstood p
 
 ## Prerequisite
 
-To play, you first need to install a few dependencies :
+If you wanna play the examples, you first need to install a few dependencies :
 
 ```
 npm install
