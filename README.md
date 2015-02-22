@@ -2,6 +2,8 @@
 
 Collection of thoughts and notes about nodejs usual mistakes and misunderstood points, for educational purpose.
 
+![Oh no!](https://raw.github.com/openhoat/node-design/branch/master/assets/oh-no.jpg)
+
 ## Prerequisite
 
 If you wanna play the examples, you first need to install a few dependencies :
