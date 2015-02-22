@@ -177,7 +177,7 @@ function run() {
 
 Suggested stories :
 
-- asking yourself why ['var' declarations are always on top line](var-location.md)
+- asking yourself why ['var' declarations are always on top line](var.md)
 - how to definitely deal with [callback hell](callback-hell.md)
 - go back to [table of contents](README.md)
 
