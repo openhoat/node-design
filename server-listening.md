@@ -110,7 +110,7 @@ NET: 9614 _read
 ...
 ```
 
-As you see, we are lucky because the binding is done before our log 'server listening...', but in the second case the binding hasn't finished when the request is received :
+As you see, we are lucky because the binding is done before our log 'server listening...', but in the second case the binding hasn't finished when the request is received because we have slow down the listening job :
 
 ```
 $ NODE_DEBUG="http net" node samples/server-listening-2-bad-ko
@@ -128,3 +128,51 @@ HTTP: HTTP SOCKET ERROR: connect ECONNREFUSED
 Error: connect ECONNREFUSED
 ...
 ```
+
+The proper way to manage it is to always handle a callback when the API provides one, as shown in [server-listening-3-good-ok](https://github.com/openhoat/node-design/blob/master/samples/server-listening-3-good-ok.js) :
+
+```javascript
+function run() {
+  var server;
+
+  function doRequest() {
+    var client;
+    client = http.request({port: port}, function (res) {
+      var body;
+      console.log('response status :', res.statusCode);
+      res.on('data', function (data) {
+        body = (body || '') + data;
+      });
+      res.on('end', function () {
+        console.log('response body :', body);
+        server.close(function () { // Don't forget to handle the callback!
+          console.log('server closed');
+        });
+      });
+    });
+    client.end();
+  }
+
+  server = http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World');
+  });
+  server.listen(port, function () { // Don't forget to handle the callback!
+    console.log('server listening on port %s', port);
+    doRequest();
+  });
+}
+```
+
+### To remember
+
+- 'listen' function is asynchronous like most of IO operations, so provide a callback function and put your next operations into it
+- This is also available for 'close'
+
+### That's all!
+
+But may be you're asking why 'var' declarations are always on top line... ? [See why](var-location.md)
+
+Or go back to [table of contents](README.md)
+
+Enjoy !

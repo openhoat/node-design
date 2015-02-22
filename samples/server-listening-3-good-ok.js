@@ -33,7 +33,7 @@ function run() {
       });
       res.on('end', function () {
         console.log('response body :', body);
-        server.close(function () {
+        server.close(function () { // Don't forget to handle the callback!
           console.log('server closed');
         });
       });
@@ -45,7 +45,7 @@ function run() {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('Hello World');
   });
-  server.listen(port, function () {
+  server.listen(port, function () { // Don't forget to handle the callback!
     console.log('server listening on port %s', port);
     doRequest();
   });
