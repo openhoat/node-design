@@ -45,7 +45,7 @@ console.log can do it better, because it supports any number of arguments, so us
 The good way
 ------------
 
-Here's a good example of using console.log with several arguments, and a format string :
+Here's a good example of using console.log with several arguments, and a format string : [console-3-good-ok](https://github.com/openhoat/node-design/blob/master/samples/console-3-good-ok.js)
 
 ```javascript
 var a = {b: 3}

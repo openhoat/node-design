@@ -57,7 +57,7 @@ function run() {
 Result :
 
 ```bash
-$ node samples/http-1-bad-ok
+$ node samples/server-listening-1-bad-ok
 server listening on port 3000
 response status : 200
 response body : Hello World
