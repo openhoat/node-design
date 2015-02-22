@@ -20,6 +20,8 @@ j : 2
 j : 3
 ```
 
+![Oh no!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/oh-no.jpg)
+
 This form of source code let people guess that variables scopes begin at the place of the keyword 'var'.
 
 Let's see what is the truth : [var-2-bad-ok](https://github.com/openhoat/node-design/blob/master/samples/var-2-bad-ok.js)
@@ -125,6 +127,8 @@ typeof j : undefined
 ```
 
 ### The good practice to avoid confusing
+
+![Oh yeah!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/yes-baby.jpg)
 
 Example of well formed source code : [var-5-good-ok](https://github.com/openhoat/node-design/blob/master/samples/var-5-good-ok.js)
 
