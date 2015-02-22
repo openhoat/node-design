@@ -1,76 +1,141 @@
-## Treat console.log as your friend
+public/private in module
+========================
 
-When you wanna log something, you usually consider console.log : [console-1-bad-ok](https://github.com/openhoat/node-design/blob/master/samples/console-1-bad-ok.js)
+When you write a node module, sometimes you don't want to expose all the functions, and prefer to keep some of them internal only.
+
+Let's take an example : [mod1-bad](https://github.com/openhoat/node-design/blob/master/samples/mod1-bad.js)
 
 ```javascript
-var a = 3;
-console.log('a : ' + a);
+var mod;
+mod = {
+  a: function () { // a is expected to stay private
+    return 'private!';
+  },
+  b: function () { // b is expected to be public
+    return 'b';
+  },
+  c: function () { // c is expected to be public and uses a private function
+    return mod.a() + 'c';
+  }
+};
+exports = module.exports = mod;
+```
+
+Use this module in another : [mod2-bad](https://github.com/openhoat/node-design/blob/master/samples/mod2-bad.js)
+
+```javascript
+var mod = require('./mod-1-bad');
+console.log('a :', mod.a());
+console.log('b :', mod.b());
+console.log('c :', mod.c());
 ```
 
 Result :
 
-```
-$ node samples/console-1-bad-ok
-a : 3
+```bash
+$ node samples/mod2-bad
+a : private!
+b : b
+c : private!c
 ```
 
-But what if the log subject is an object : [console-2-bad-ko](https://github.com/openhoat/node-design/blob/master/samples/console-2-bad-ko.js)
+As you noticed, the a function of mod if exposed.
+
+The fix is simple, we just have to declare a function outside the exposed scope : [mod3-good](https://github.com/openhoat/node-design/blob/master/samples/mod3-good.js)
 
 ```javascript
-var a = {b: 3};
-console.log('a : ' + a);
+var mod;
+function a() { // a is expected to stay private
+  return 'private!';
+}
+mod = {
+  b: function () { // b is expected to be public
+    return 'b';
+  },
+  c: function () { // c is expected to be public and uses a private function
+    return a() + 'c';
+  }
+};
+exports = module.exports = mod;
+```
+
+And use it again : [mod4-good](https://github.com/openhoat/node-design/blob/master/samples/mod4-good.js)
+
+```javascript
+var mod = require('./mod-3-good');
+console.log('typeof a :', typeof mod.a);
+console.log('b :', mod.b());
+console.log('c :', mod.c());
 ```
 
 Result :
 
+```bash
+$ node samples/mod4-good
+typeof a : undefined
+b : b
+c : private!c
+typeof a : undefined
+b : b
+c : private!c
 ```
-$ node samples/console-2-bad-ko
-a : [object Object]
-```
 
-![Oh no!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/oh-no.jpg)
+Now a is no longer available, but c continues to use a.
 
-Oops... It's not exactly what we expected...
+But, to have it work, we had to change the code of c() and directly call a() instead of mod.a()...
 
-### The reason why the result is stupid
+The good way
+------------
 
-We called console.log with only one argument that is a concatenation between one string ('a : ') and one object that is converted to a string (toString() is called under the hood).
-
-The stupidness here is not in console.log, but in the way we call it.
-
-console.log can do it better, because it supports any number of arguments, so use it.
-
-### The good way
-
-Here's a good example of using console.log with several arguments, and a format string :
+Let's see a more seamless solution : [mod5-good](https://github.com/openhoat/node-design/blob/master/samples/mod5-good.js)
 
 ```javascript
-var a = {b: 3}
-  , b = 4;
-console.log('a :', a);
-console.log('a : %j, b : %s', a, b);
-console.log('values :', a, b);
+var mod;
+mod = {
+  a: function () { // a is expected to stay private
+    return 'private!';
+  },
+  b: function () { // b is expected to be public
+    return 'b';
+  },
+  c: function () { // c is expected to be public and uses a private function
+    return mod.a() + 'c';
+  }
+};
+// Expose
+exports = module.exports = {};
+['b', 'c'].forEach(function (key) {
+  exports[key] = mod[key];
+});
+```
+Use it : [mod6-good](https://github.com/openhoat/node-design/blob/master/samples/mod6-good.js)
+
+```javascript
+var mod = require('./mod-5-good');
+console.log('typeof a :', typeof mod.a);
+console.log('b :', mod.b());
+console.log('c :', mod.c());
 ```
 
 Result :
 
+```bash
+$ node samples/mod6-good
+typeof a : undefined
+b : b
+c : private!c
 ```
-$ node samples/console-3-good-ok
-a : { b: 3 }
-a : {"b":3}, b : 4
-values : { b: 3 } 4
-```
 
-![Oh yeah!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/yes-baby.jpg)
+Now, if we need to create a new function in the module and expose it, we just have to add it to the array ['b', 'c'].
 
-More informaton about [format used by console.log](http://nodejs.org/api/util.html#util_util_format_format)
-
-### To remember
+To remember
+-----------
 
 - don't use '+' with console.log, instead use ',' to pass each argument
 - the first string argument can help you to specify the format
 
-### That's all!
+That's all!
+-----------
 
 Suggested stories :
 

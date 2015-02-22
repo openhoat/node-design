@@ -1,6 +1,7 @@
-## Var keyword good place
+Var keyword good place
+======================
 
-Sure you have already seen this kind of code, and probably find it good : [var-1-bad-ok](https://github.com/openhoat/node-design/blob/master/samples/var-1-bad-ok.js)
+Sure you have already seen this kind of code, and probably find it good : [var-1-bad](https://github.com/openhoat/node-design/blob/master/samples/var-1-bad.js)
 
 ```javascript
 var i = 1;
@@ -13,7 +14,7 @@ for (var j = 1; j <= 3; j++) {
 Result :
 
 ```bash
-$ node samples/var-1-bad-ok
+$ node samples/var-1-bad
 i : 1
 j : 1
 j : 2
@@ -24,7 +25,7 @@ j : 3
 
 This form of source code let people guess that variables scopes begin at the place of the keyword 'var'.
 
-Let's see what is the truth : [var-2-bad-ok](https://github.com/openhoat/node-design/blob/master/samples/var-2-bad-ok.js)
+Let's see what is the truth : [var-2-bad](https://github.com/openhoat/node-design/blob/master/samples/var-2-bad.js)
 
 ```javascript
 console.log('i :', i);
@@ -39,7 +40,7 @@ for (var j = 1; j <= 3; j++) {
 Result :
 
 ```bash
-$ node samples/var-2-bad-ok
+$ node samples/var-2-bad
 i : undefined
 i : 1
 j : undefined
@@ -52,7 +53,7 @@ Oops... It seems that i and j are effectively declared (despite they are not def
 
 In fact, the rule is simple : the visibility of variables is defined by their nearest outer scope, and a scope is usually defined by 'function' keyword.
 
-See it in this example : [var-3-bad-ok](https://github.com/openhoat/node-design/blob/master/samples/var-3-bad-ok.js)
+See it in this example : [var-3-bad](https://github.com/openhoat/node-design/blob/master/samples/var-3-bad.js)
 
 ```javascript
 console.log('typeof i : %s, typeof j : %s', typeof i, typeof j);
@@ -77,7 +78,7 @@ console.log('typeof i : %s, typeof j : %s', typeof i, typeof j);
 Result :
 
 ```bash
-$ node samples/var-3-bad-ok
+$ node samples/var-3-bad
 typeof i : undefined, typeof j : undefined
 i : undefined
 i : 1, j : undefined
@@ -90,7 +91,7 @@ typeof i : undefined, typeof j : undefined
 
 As you noticed, j continues its life after the for loop with a value of 4, so contrary to popular belief the scope is not the for loop...
 
-Example of nested scopes : [var-4-bad-ok](https://github.com/openhoat/node-design/blob/master/samples/var-4-bad-ok.js)
+Example of nested scopes : [var-4-bad](https://github.com/openhoat/node-design/blob/master/samples/var-4-bad.js)
 
 ```javascript
 (function () {
@@ -115,7 +116,7 @@ Example of nested scopes : [var-4-bad-ok](https://github.com/openhoat/node-desig
 Result :
 
 ```bash
-$ node samples/var-4-bad-ok
+$ node samples/var-4-bad
 i : undefined
 i : 1
 j : undefined
@@ -126,11 +127,12 @@ i : 1, j : 4
 typeof j : undefined
 ```
 
-### The good practice to avoid confusing
+The good practice to avoid confusing
+------------------------------------
 
 ![Oh yeah!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/yes-baby.jpg)
 
-Example of well formed source code : [var-5-good-ok](https://github.com/openhoat/node-design/blob/master/samples/var-5-good-ok.js)
+Example of well formed source code : [var-5-good](https://github.com/openhoat/node-design/blob/master/samples/var-5-good.js)
 
 ```javascript
 var a = 7
@@ -169,7 +171,7 @@ console.log('a : %s, b : %s, c : %s', a, b, c);
 Result :
 
 ```bash
-$ node samples/var-5-bad-ok
+$ node samples/var-5-good
 a : 7, b : 8, c : undefined
 i : undefined
 i : 1
@@ -184,17 +186,15 @@ a : 7, b : 8, c : 9
 a : 7, b : 8, c : 9
 ```
 
-### To remember
+To remember
+-----------
 
 - definition and declaration are not the same concept, while definition is explicite, declaration is done under the hood despite the "var" keyword location
 - except if you perfectly know what you do, you should always place all "var" declarations at the very first top line of the current scope (function), even if you only need to define it later
 
-### That's all!
+That's all!
+-----------
 
-Suggested stories :
-
-- asking yourself why ['var' declarations are always on top line](var-location.md)
-- how to definitely deal with [callback hell](callback-hell.md)
 - go back to [table of contents](../README.md#use-cases)
 
 Enjoy !

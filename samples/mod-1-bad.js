@@ -4,7 +4,7 @@ var mod;
 
 mod = {
   a: function () { // a is expected to stay private
-    return 'a';
+    return 'private!';
   },
   b: function () { // b is expected to be public
     return 'b';
@@ -14,8 +14,4 @@ mod = {
   }
 };
 
-// Expose
-exports = module.exports = {};
-['b', 'c'].forEach(function (key) {
-  exports[key] = mod[key];
-});
+exports = module.exports = mod;

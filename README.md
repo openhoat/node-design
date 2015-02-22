@@ -10,7 +10,7 @@ This project only provide markdown contents to explain problems and solutions, a
 Prerequisite
 ------------
 
-If you wanna play the examples, you first need to install a few dependencies :
+If you wanna play the [provided samples](https://github.com/openhoat/node-design/tree/master/samples), you first need to install a few dependencies :
 
 ```bash
 $ npm install
