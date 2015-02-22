@@ -4,6 +4,8 @@ Collection of thoughts and notes about nodejs usual mistakes and misunderstood p
 
 ![Oh no!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/oh-no.jpg)
 
+This project only provide markdown contents to explain problems and solutions, and samples of code to illustrate them.
+
 ## Prerequisite
 
 If you wanna play the examples, you first need to install a few dependencies :
