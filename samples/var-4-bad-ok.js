@@ -1,12 +1,19 @@
 'use strict';
 
 (function () {
-  var i, j, k;
-  console.log(i, j, k);
-  i = 1;
-  console.log(i, j, k);
-  j = 2;
-  console.log(i, j, k);
-  k = 3;
-  console.log(i, j, k);
+  // i begin of life
+  console.log('i :', i);
+  var i = 1;
+  console.log('i : %s', i);
+  (function(){
+    // j begin of life
+    console.log('j : %s', j);
+    for (var j = 1; j <= 3; j++) {
+      console.log('j :', j);
+    }
+    console.log('i : %s, j : %s', i, j);
+    // j end of life
+  })();
+  console.log('typeof j : %s', typeof j);
+  // i end of life
 })();

@@ -12,7 +12,9 @@ npm install
 
 ## Use cases
 
-- [var keyword place](var.md)
-- [server listening](server-listening.md)
+1- [server listening](server-listening.md)
+2- [var keyword good place](var.md)
+3- [kill the callback hell](callback-hell.md)
+4- [let console.log be your friend](console.md)
 
 Enjoy !

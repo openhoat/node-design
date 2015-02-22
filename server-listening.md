@@ -167,11 +167,11 @@ function run() {
 ### To remember
 
 - 'listen' function is asynchronous like most of IO operations, so provide a callback function and put your next operations into it
-- This is also available for 'close'
+- this is also available for 'close'
 
 ### That's all!
 
-Other stories :
+Suggested stories :
 
 - asking yourself why ['var' declarations are always on top line](var-location.md)
 - how to definitely deal with [callback hell](callback-hell.md)
