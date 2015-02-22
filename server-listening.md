@@ -129,7 +129,7 @@ Error: connect ECONNREFUSED
 ...
 ```
 
-The proper way to manage it is to always handle a callback when the API provides one, as shown in [server-listening-3-good-ok](https://github.com/openhoat/node-design/blob/master/samples/server-listening-3-good-ok.js) :
+That's why the proper way to manage it is to always handle a callback when the API provides one, as shown in [server-listening-3-good-ok](https://github.com/openhoat/node-design/blob/master/samples/server-listening-3-good-ok.js) :
 
 ```javascript
 function run() {
