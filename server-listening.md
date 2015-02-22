@@ -63,7 +63,7 @@ server closed
 
 ### Why it should fail and why it does not ?
 
-To understand why it could fail, first think that the http listen function is asynchronous (this is also available for others modules, like express).
+To understand why it could fail, first think that the http listen function is asynchronous (this is also available for others modules, like [express](http://expressjs.com/)).
 
 To show what it means, let's hack the listen function to make it "slower" and see the result :
 
