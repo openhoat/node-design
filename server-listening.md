@@ -15,7 +15,7 @@ Let's take an example :
 - Do a HTTP request, and get the response
 - After the response is received, close the server
 
-Complete code : [http-1-bad-ok](https://github.com/openhoat/node-design/blob/master/samples/http-1-bad-ok.js)
+Complete code : [server-listening-1-bad-ok](https://github.com/openhoat/node-design/blob/master/samples/server-listening-1-bad-ok.js)
 
 ```javascript
 var http = require('http')
