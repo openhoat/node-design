@@ -12,4 +12,7 @@ npm install
 
 ## Use cases
 
+### [var keyword place](var.md)
 ### [Server listening](server-listening.md)
+
+Enjoy !
