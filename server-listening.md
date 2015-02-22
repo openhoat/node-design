@@ -131,6 +131,8 @@ Error: connect ECONNREFUSED
 ...
 ```
 
+### The good way
+
 That's why the proper way to manage it and to prevent you of having bad surprises, is to always handle a callback when the API provides one, as shown in [server-listening-3-good-ok](https://github.com/openhoat/node-design/blob/master/samples/server-listening-3-good-ok.js) :
 
 ![Oh yeah!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/yes-baby.jpg)
