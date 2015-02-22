@@ -10,7 +10,7 @@ mod = {
     return 'b';
   },
   c: function () { // c is expected to be public and uses a private function
-    return mod.a() + 'c';
+    return mod.a() + 'c'; // mod.a() stay unchanged
   }
 };
 

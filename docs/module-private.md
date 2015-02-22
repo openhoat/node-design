@@ -53,7 +53,7 @@ mod = {
     return 'b';
   },
   c: function () { // c is expected to be public and uses a private function
-    return a() + 'c';
+    return a() + 'c'; // mod.a() has changed to a()
   }
 };
 exports = module.exports = mod;
@@ -72,9 +72,6 @@ Result :
 
 ```bash
 $ node samples/mod4-good
-typeof a : undefined
-b : b
-c : private!c
 typeof a : undefined
 b : b
 c : private!c
@@ -99,7 +96,7 @@ mod = {
     return 'b';
   },
   c: function () { // c is expected to be public and uses a private function
-    return mod.a() + 'c';
+    return mod.a() + 'c'; // mod.a() stay unchanged
   }
 };
 // Expose

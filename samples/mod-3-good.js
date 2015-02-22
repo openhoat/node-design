@@ -11,7 +11,7 @@ mod = {
     return 'b';
   },
   c: function () { // c is expected to be public and uses a private function
-    return a() + 'c';
+    return a() + 'c'; // mod.a() has changed to a()
   }
 };
 
