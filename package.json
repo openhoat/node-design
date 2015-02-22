@@ -25,6 +25,7 @@
     "bluebird": "2.9.9",
     "express": "4.11.2",
     "hw-logger": "1.0.9",
+    "lodash": "3.2.0",
     "measure": "0.1.1",
     "request": "2.53.0"
   },
@@ -34,10 +35,8 @@
     "grunt-contrib-clean": "0.6.0",
     "grunt-contrib-jshint": "0.10.0",
     "grunt-mkdir": "0.1.2",
-    "grunt-mocha-cov": "0.3.0",
     "jshint-stylish": "1.0.0",
     "load-grunt-tasks": "1.0.0",
-    "lodash": "3.2.0",
     "mkdirp": "0.5.0",
     "mocha": "2.1.0",
     "time-grunt": "1.0.0"
