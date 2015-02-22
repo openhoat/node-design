@@ -195,6 +195,6 @@ Suggested stories :
 
 - asking yourself why ['var' declarations are always on top line](var-location.md)
 - how to definitely deal with [callback hell](callback-hell.md)
-- go back to [table of contents](README.md)
+- go back to [table of contents](README.md#use-cases)
 
 Enjoy !
