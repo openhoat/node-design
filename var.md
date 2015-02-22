@@ -96,7 +96,7 @@ Example of nested scopes : [var-4-bad-ok](https://github.com/openhoat/node-desig
   console.log('i :', i);
   var i = 1;
   console.log('i : %s', i);
-  (function(){
+  (function () {
     // j begin of life
     console.log('j : %s', j);
     for (var j = 1; j <= 3; j++) {
