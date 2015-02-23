@@ -24,10 +24,11 @@ Use cases
 3. [let console.log be your friend](docs/console.md)
 4. [public/private in module](docs/module-private.md)
 5. [definitely kill the callback hell](docs/callback-hell.md)
+6. [the options callback idiom](docs/options-cb.md)
 
 coming soon :
 
-6. [design a server component the good way](docs/server.md)
-7. [mocha tests and promises](docs/mocha-promises.md)
+7. [design a server component the good way](docs/server.md)
+8. [mocha tests and promises](docs/mocha-promises.md)
 
 Enjoy !
