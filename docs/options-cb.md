@@ -102,6 +102,8 @@ Unhandled rejection Error: a not defined!
 
 ![Oh yeah!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/yes-baby.jpg)
 
+The solution suggested here might seem to be a few overkill considering the goal of the function, but think it's just an example, and be sure there's a ton of real life examples that match.
+
 To remember
 -----------
 
