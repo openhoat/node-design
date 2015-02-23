@@ -34,10 +34,10 @@ And if we want to use it in a promises chain, it will not fit...
 
 ![Oh no!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/oh-no.jpg)
 
-Ok, let's resume, we want a function that :
+Ok, let's resume, our function should :
 
-1. understands what we mean even if some arguments are missing
-2. returns the result by calling the provided callback, or returns a promise
+1. understand what we mean even if some arguments are missing
+2. return the result by calling the provided callback, or return a promise
 
 The good way
 ------------
