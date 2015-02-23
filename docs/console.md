@@ -77,9 +77,4 @@ To remember
 That's all!
 -----------
 
-Suggested stories :
-
-- asking yourself why ['var' declarations are always on top line](var.md)
-- go back to [table of contents](../README.md#use-cases)
-
-Enjoy !
+go back to [table of contents](../README.md#use-cases)

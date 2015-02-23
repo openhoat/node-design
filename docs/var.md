@@ -23,7 +23,7 @@ j : 3
 
 ![Oh no!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/oh-no.jpg)
 
-This form of source code let people guess that variables scopes begin at the place of the keyword 'var'.
+This source code let people guess that variables scopes begin at the place of the keyword 'var'.
 
 Let's see what is the truth : [var-2-bad](https://github.com/openhoat/node-design/blob/master/samples/var-2-bad.js)
 
@@ -132,7 +132,7 @@ The good practice to avoid confusing
 
 ![Oh yeah!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/yes-baby.jpg)
 
-Example of well formed source code : [var-5-good](https://github.com/openhoat/node-design/blob/master/samples/var-5-good.js)
+Example of good place for 'var' keyword : [var-5-good](https://github.com/openhoat/node-design/blob/master/samples/var-5-good.js)
 
 ```javascript
 var a = 7
@@ -195,6 +195,4 @@ To remember
 That's all!
 -----------
 
-- go back to [table of contents](../README.md#use-cases)
-
-Enjoy !
+go back to [table of contents](../README.md#use-cases)

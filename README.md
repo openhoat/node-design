@@ -5,7 +5,7 @@ Collection of thoughts and notes about nodejs usual mistakes and misunderstood p
 
 ![Oh no!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/oh-no.jpg)
 
-This project only provide markdown contents to explain problems and solutions, and samples of code to illustrate them.
+This project only provides markdown contents to explain problems and solutions, and samples of code to illustrate them.
 
 Prerequisite
 ------------
@@ -25,6 +25,6 @@ Use cases
 4. [public/private in module](docs/module-private.md)
 5. [definitely kill the callback hell](docs/callback-hell.md)
 6. [design a server component the good way](docs/server.md)
-
+7. [mocha tests and promises](docs/mocha-promises.md)
 
 Enjoy !

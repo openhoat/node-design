@@ -39,6 +39,8 @@ b : b
 c : private!c
 ```
 
+![Oh no!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/oh-no.jpg)
+
 As you noticed, the a function of mod if exposed.
 
 The fix is simple, we just have to declare a function outside the exposed scope : [mod3-good](https://github.com/openhoat/node-design/blob/master/samples/mod3-good.js)
@@ -123,7 +125,9 @@ b : b
 c : private!c
 ```
 
-Now, if we need to create a new function in the module and expose it, we just have to add it to the array ['b', 'c'].
+![Oh yeah!](https://raw.githubusercontent.com/openhoat/node-design/master/assets/yes-baby.jpg)
+
+Later, if you need to create a new function in the module and to expose it, simply add it to the array ['b', 'c'].
 
 To remember
 -----------
@@ -134,9 +138,4 @@ To remember
 That's all!
 -----------
 
-Suggested stories :
-
-- asking yourself why ['var' declarations are always on top line](var.md)
-- go back to [table of contents](../README.md#use-cases)
-
-Enjoy !
+go back to [table of contents](../README.md#use-cases)
