@@ -28,7 +28,7 @@ Use cases
 
 coming soon :
 
-7. [efficient design for a server component](docs/server.md)
-8. [mocha loves promises](docs/mocha-promises.md)
+- [efficient design for a server component](docs/server.md)
+- [mocha loves promises](docs/mocha-promises.md)
 
 Enjoy !
