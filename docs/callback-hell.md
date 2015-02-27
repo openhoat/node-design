@@ -178,12 +178,22 @@ getDirFiles(path.join(__dirname, '..'), function (err, files) {
 });
 ```
 
+The other good news : the promise version does not decrease performance as shown in [callback-hell-5-bench](https://github.com/openhoat/node-design/blob/master/samples/callback-hell-5-bench.js)
+
+```bash
+$ node samples/callback-hell-5-bench
+...
+bench #0 : 1845ms, #1 : 1555ms
+
+```
+
 To remember
 -----------
 
 - you should seriously consider using promises when you're doing a lot of asynchronous code
 - bluebird is a wonderful promise implementation
-- for simple callbacks, promises are usually overkill
+- promises, when well used, do not decrease performances (and sometimes increase them)
+- for simple callbacks, promises are usually overkill because the initial code is already easy to read
 - use nodeify in your APIs to let the client code seamlessly choose between promise and callback
 
 That's all!

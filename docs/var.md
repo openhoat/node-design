@@ -91,6 +91,8 @@ typeof i : undefined, typeof j : undefined
 
 As you noticed, j continues its life after the for loop with a value of 4, so contrary to popular belief the scope is not the for loop...
 
+More about [variable hoisting](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var).
+
 Example of nested scopes : [var-4-bad](https://github.com/openhoat/node-design/blob/master/samples/var-4-bad.js)
 
 ```javascript

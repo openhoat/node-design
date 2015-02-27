@@ -1,7 +1,7 @@
 'use strict';
 
 var chai = require('chai')
-  , server = require('./server')
+  , server = require('../lib/server')
   , logger = require('hw-logger')
   , Promise = require('bluebird')
   , request = require('request')
